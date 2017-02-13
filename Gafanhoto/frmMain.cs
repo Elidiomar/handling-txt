@@ -23,6 +23,7 @@ namespace Gafanhoto
 
                 // FINALISA O PROGRAMA
                 this.Close();
+
             }
             else
             {
