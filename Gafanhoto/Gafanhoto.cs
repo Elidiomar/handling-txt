@@ -12,7 +12,7 @@ namespace Gafanhoto
 {
     class Gafanhoto
     {
-        private int contador = 0;
+        private int counter = 0;
         private string lineRead;
         private int total = 0;
 
@@ -33,31 +33,31 @@ namespace Gafanhoto
                 for (int i = 0; i < lineRead.Length; i++)
                 {
 
-                    // SE FOR INICIO DE LINHA E O ARRAY COMEÇAR COM 0 IMPRIME POSIÇÃO REFERENTE
+                    // SE FOR INICIO DE LINHA E O ARRAY COMEÇAR COM 0, IMPRIME POSIÇÃO REFERENTE
                     if (i == 0 && lineRead[i] == '0')
-                    {                 
-                        fileWriter.Write(i +1);
+                    {
+                        fileWriter.Write(i + 1);
                         total++;
                     }
 
-                    // SE O CONTADOR FOR IGUAL A DOIS E O ARRAY FOR IGUAL A 0 IMPRIME POSIÇÃO E ZERA O CONTADOR
-                    if (contador == 2 && lineRead[i] == '0')
+                    // SE O CONTADOR FOR IGUAL A DOIS E O ARRAY FOR IGUAL A 0, IMPRIME POSIÇÃO E ZERA O CONTADOR
+                    if (counter == 2 && lineRead[i] == '0')
                     {
                         fileWriter.Write("," + (i + 1));
-                        contador = 0;
+                        counter = 0;
                         total++;
                     }
 
                     // ACRESCENTA MAIS UM NO CONTADOR CASO O ARRAY SEJA IGUAL A "1"
-                    if (contador < 2 && lineRead[i] == '0')
+                    if (counter < 2 && lineRead[i] == '0')
                     {
-                        contador++;
+                        counter++;
                     }
                 }
 
                 // QUEBRA DE LINHA E ZERA O CONTADOR
                 fileWriter.WriteLine('\n');
-                contador = 0;
+                counter = 0;
             }
 
             // FECHA OS ARQUIVOS
